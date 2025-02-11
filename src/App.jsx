@@ -1,31 +1,29 @@
 import { useState } from 'react';
+import { Routes, Route } from 'react-router-dom'; // Import Routes and Route
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-//import "./App.css";
+// import "./App.css"; // Uncomment if needed
 import { Header } from './components/Header';
 import Footer from './components/Footer';
 import { Content } from './components/Content';
-import { ArrayDemo1 } from './components/ArrayDemo1';
-import { ArrayDemo2 } from './components/ArrayDemo2';
-import { ArrayDemo3 } from './components/ArrayDemo3';
-import { ArrayDemo4 } from './components/ArrayDemo4';
-import { UseStateDemo } from './components/UseStateDemo';
-import { UseStateDemo2 } from './components/UseStateDemo2';
+import { Navbar } from './components/Navbar';
+import { HotstarWelcome } from './components/hotstar/Welcome';
+import { HotstarMovies } from './components/hotstar/Movies';
+import { Error404 } from './components/hotstar/Error404';
+import { HotstarHome } from './components/hotstar/Home';
 
 function App() {
-  //js
-
   return (
     <div>
-      {/* <Header></Header> */}
-      {/* <Content></Content> */}
-      {/* <ArrayDemo1></ArrayDemo1> */}
-      {/* <ArrayDemo2></ArrayDemo2> */}
-      {/* <ArrayDemo3></ArrayDemo3> */}
-      {/* <ArrayDemo4/> */}
-      {/* <UseStateDemo></UseStateDemo> */}
-      <UseStateDemo2></UseStateDemo2>
-      {/* <Footer></Footer> */}
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HotstarWelcome />} />
+        <Route path="/home" element={<HotstarHome />} />
+        <Route path="/movies" element={<HotstarMovies />} />
+        <Route path="/*" element={<Error404 />} />
+      </Routes>
+      {/* <Footer /> */}
+      {/* Add Footer if needed */}
     </div>
   );
 }
