@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 export const Navbar = () => {
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-sucess bg-dark">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">
           Navbar
         </a>
@@ -32,9 +32,30 @@ export const Navbar = () => {
                 movies
               </Link>
             </li>
+
             <li class="nav-item">
-              <Link class="nav-link" to="/*">
-                Error Page
+              <Link class="nav-link" to="/formdemo1">
+                form demo 1
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/formdemo2">
+                form demo 2
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/formdemo3">
+                form demo 3
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/formdemo4">
+                form demo 4
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/loginValidateLink">
+                LoginValidationHere
               </Link>
             </li>
           </ul>
