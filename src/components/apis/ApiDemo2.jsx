@@ -1,39 +1,50 @@
-import axios from "axios";
-import React, { useState } from "react";
+import axios from 'axios';
+import React, { useState } from 'react';
 
 export const ApiDemo2 = () => {
-  const [message, setmessage] = useState("");
-  const [users, setusers] = useState([]);
+  const [message, setMessage] = useState('');
+  const [users, setUsers] = useState([]);
 
   const getUserData = async () => {
-    const res = await axios.get("https://node5.onrender.com/user/user");
-    console.log(res); //axios object...
-    console.log(res.data); //original response....
-    console.log(res.data.message);
-    setmessage(res.data.message); //""
-    console.log(res.data.data);
-    setusers(res.data.data); //[]
+    try {
+      const res = await axios.get('https://node5.onrender.com/user/user');
+      console.log(res.data);
+      setMessage(res.data.message);
+      setUsers(res.data.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: 'center' }}>
       <h1>API DEMO 2</h1>
-      <button
-        onClick={() => {
-          getUserData();
-        }}
-      >
-        get
-      </button>
-      {message}
-      {/* {users} */}
-      {users?.map((user) => {
-        return (
-          <li>
-            {user.name} {user.age}
-          </li>
-        );
-      })}
+      <button onClick={getUserData}>Fetch Users</button>
+      <p>{message}</p>
+
+      {users.length > 0 && (
+        <table
+          border="1"
+          style={{ margin: '20px auto', borderCollapse: 'collapse' }}
+        >
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            {users.map((user, index) => (
+              <tr key={index}>
+                <td>{user.name}</td>
+                <td>{user.age}</td>
+                <td>{user.email}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      )}
     </div>
   );
 };
