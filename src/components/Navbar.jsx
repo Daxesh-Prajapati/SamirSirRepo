@@ -58,6 +58,21 @@ export const Navbar = () => {
                 LoginValidationHere
               </Link>
             </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/GTU100ActivityFormLink">
+                GTU100ActivityFormValidationHere
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/ApiDemoKiLink">
+                ApiDemo1
+              </Link>
+            </li>
+            <li class="nav-item">
+              <Link class="nav-link" to="/ApiDemo2NiLink">
+                ApiDemo2
+              </Link>
+            </li>
           </ul>
         </div>
       </nav>
