@@ -20,6 +20,8 @@ import { Login } from './components/forms/Login';
 import { GTU100ActivityForm } from './components/forms/GTU100ActivityForm';
 import { ApiDemo1 } from './components/apis/ApiDemo1';
 import { ApiDemo2 } from './components/apis/ApiDemo2';
+import { SearchMovie } from './components/omdb/SearchMovie';
+import { MovieDetail } from './components/omdb/MovieDetail';
 
 function App() {
   return (
@@ -38,6 +40,8 @@ function App() {
         <Route path="/loginValidateLink" element={<Login />}></Route>
         <Route path="/ApiDemoKiLink" element={<ApiDemo1 />}></Route>
         <Route path="/ApiDemo2NiLink" element={<ApiDemo2 />}></Route>
+        <Route path="/SearchMovieLink" element={<SearchMovie />}></Route>
+        <Route path="/MovieDetailLink/:id" element={<MovieDetail />}></Route>
         <Route
           path="/GTU100ActivityFormLink"
           element={<GTU100ActivityForm />}

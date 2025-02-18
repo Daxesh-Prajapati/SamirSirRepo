@@ -24,6 +24,7 @@ export const ApiDemo2 = () => {
 
       {users.length > 0 && (
         <table
+          class="table table-dark"
           border="1"
           style={{ margin: '20px auto', borderCollapse: 'collapse' }}
         >
@@ -32,14 +33,16 @@ export const ApiDemo2 = () => {
               <th>Name</th>
               <th>Age</th>
               <th>Email</th>
+              <th>id</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody style={{backgroundColor:"white", color:"black"}}>
             {users.map((user, index) => (
               <tr key={index}>
                 <td>{user.name}</td>
                 <td>{user.age}</td>
                 <td>{user.email}</td>
+                <td>{users.id}</td>
               </tr>
             ))}
           </tbody>
